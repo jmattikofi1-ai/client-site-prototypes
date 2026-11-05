@@ -1,0 +1,529 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="robots" content="noindex, nofollow">
+<title>DEMO – St James Landscapes Ltd | Redesign concept by Joseph</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght@0,9..144,400;0,9..144,600;1,9..144,400&family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+<style>
+:root{
+  --g950:#0a1f13;--g900:#0f2e1c;--g800:#163d27;--g600:#2b6b43;--g500:#3c8a58;
+  --lime:#b8e05a;--cream:#f5f3ec;--sand:#ebe7db;--ink:#18201b;--muted:#5e6a62;
+  --r:22px;--ease:cubic-bezier(.22,.8,.24,1);
+}
+*{box-sizing:border-box;margin:0;padding:0}
+html{scroll-behavior:smooth;scroll-padding-top:110px}
+body{font-family:Inter,system-ui,sans-serif;color:var(--ink);background:var(--cream);line-height:1.65;-webkit-font-smoothing:antialiased}
+img{max-width:100%;display:block}
+a{color:inherit}
+h1,h2,h3{font-family:Fraunces,Georgia,serif;font-weight:600;line-height:1.08;letter-spacing:-.02em;color:var(--g900)}
+h2{font-size:clamp(2rem,4.2vw,3.2rem)}
+h2 em,h1 em{font-style:italic;font-weight:400;color:var(--g500)}
+.container{width:min(1200px,92%);margin-inline:auto}
+section{padding:clamp(72px,10vw,128px) 0}
+.eyebrow{display:inline-flex;align-items:center;gap:10px;font-size:.78rem;font-weight:600;letter-spacing:.16em;text-transform:uppercase;color:var(--g500);margin-bottom:16px}
+.eyebrow::before{content:"";width:28px;height:1.5px;background:currentColor}
+.lead{font-size:1.1rem;color:var(--muted);max-width:620px}
+
+/* ---------- Demo markings ---------- */
+.watermark{position:fixed;inset:0;z-index:1000;pointer-events:none;
+  background-image:url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='360' height='220'%3E%3Ctext x='50%25' y='50%25' fill='rgba(214,48,48,0.2)' stroke='rgba(255,255,255,0.2)' stroke-width='0.8' font-family='Arial,Helvetica,sans-serif' font-size='26' font-weight='700' text-anchor='middle' dominant-baseline='middle' transform='rotate(-28 180 110)'%3EDEMO by Joseph%3C/text%3E%3C/svg%3E")}
+.demo-bar{background:#c62828;color:#fff;text-align:center;font-weight:600;font-size:.78rem;letter-spacing:.08em;padding:7px 10px;text-transform:uppercase}
+.demo-stamp{position:fixed;right:18px;bottom:18px;z-index:1001;background:var(--g950);color:#fff;border:2px solid var(--lime);
+  border-radius:999px;padding:9px 16px;font-weight:600;font-size:.82rem;box-shadow:0 8px 24px rgba(0,0,0,.25);pointer-events:none}
+
+/* ---------- Header / nav ---------- */
+.topbar{position:fixed;top:0;left:0;right:0;z-index:60}
+.nav{transition:background .35s,box-shadow .35s,backdrop-filter .35s}
+.nav.solid,.nav.open{background:rgba(10,31,19,.86);backdrop-filter:blur(14px) saturate(140%);box-shadow:0 8px 30px rgba(0,0,0,.18)}
+.nav-inner{display:flex;align-items:center;justify-content:space-between;height:76px}
+.brand{display:flex;align-items:center;gap:12px;text-decoration:none;color:#fff}
+.brand-mark{width:42px;height:42px;border-radius:12px;background:var(--lime);display:grid;place-items:center;font-family:Fraunces,serif;font-weight:600;color:var(--g900);font-size:1.1rem}
+.brand strong{font-family:Fraunces,serif;font-weight:600;font-size:1.18rem;display:block;line-height:1.1}
+.brand small{font-size:.7rem;opacity:.7;letter-spacing:.1em;text-transform:uppercase}
+.menu{display:flex;align-items:center;gap:6px;list-style:none}
+.menu > li{position:relative}
+.menu > li > a,.menu > li > button{display:flex;align-items:center;gap:6px;color:#eef5ef;text-decoration:none;font:500 .95rem Inter,sans-serif;
+  padding:10px 14px;border-radius:999px;background:none;border:0;cursor:pointer;transition:background .2s}
+.menu > li > a:hover,.menu > li > button:hover{background:rgba(255,255,255,.1)}
+.chev{width:10px;height:10px;transition:transform .3s var(--ease)}
+/* desktop drop-down */
+.drop{position:absolute;top:calc(100% + 10px);left:50%;width:350px;background:#fff;border-radius:18px;padding:10px;list-style:none;
+  box-shadow:0 24px 60px rgba(10,31,19,.25);opacity:0;visibility:hidden;transform:translate(-50%,-8px);
+  transition:opacity .25s var(--ease),transform .3s var(--ease),visibility .25s}
+.drop::before{content:"";position:absolute;inset:-12px 0 auto;height:12px}
+.has-drop:hover .drop,.has-drop:focus-within .drop{opacity:1;visibility:visible;transform:translate(-50%,0)}
+.has-drop:hover .chev,.has-drop:focus-within .chev{transform:rotate(180deg)}
+.drop a{display:flex;gap:12px;align-items:center;padding:10px;border-radius:12px;text-decoration:none;color:var(--ink);transition:background .2s}
+.drop a:hover{background:var(--cream)}
+.drop img{width:46px;height:46px;border-radius:10px;object-fit:cover}
+.drop strong{display:block;font-size:.92rem}
+.drop span{font-size:.8rem;color:var(--muted)}
+.btn{display:inline-flex;align-items:center;gap:8px;background:var(--lime);color:var(--g950);font-weight:600;padding:14px 26px;border-radius:999px;
+  text-decoration:none;border:0;cursor:pointer;font:600 .95rem Inter,sans-serif;transition:transform .25s var(--ease),box-shadow .25s}
+.btn:hover{transform:translateY(-2px);box-shadow:0 12px 28px rgba(184,224,90,.4)}
+.btn.ghost{background:rgba(255,255,255,.1);color:#fff;border:1px solid rgba(255,255,255,.35);backdrop-filter:blur(6px)}
+.btn.dark{background:var(--g900);color:#fff}
+.burger{display:none;width:46px;height:46px;border-radius:12px;background:rgba(255,255,255,.1);border:1px solid rgba(255,255,255,.2);cursor:pointer;position:relative}
+.burger span{position:absolute;left:13px;right:13px;height:2px;background:#fff;border-radius:2px;transition:transform .35s var(--ease),opacity .2s}
+.burger span:nth-child(1){top:16px}.burger span:nth-child(2){top:22px}.burger span:nth-child(3){top:28px}
+.nav.open .burger span:nth-child(1){transform:translateY(6px) rotate(45deg)}
+.nav.open .burger span:nth-child(2){opacity:0}
+.nav.open .burger span:nth-child(3){transform:translateY(-6px) rotate(-45deg)}
+
+.scrim{position:fixed;inset:0;z-index:55;background:rgba(5,15,9,.6);backdrop-filter:blur(3px);opacity:0;visibility:hidden;transition:opacity .4s,visibility .4s}
+.scrim.on{opacity:1;visibility:visible}
+
+/* ---------- Hero ---------- */
+.hero{position:relative;min-height:100svh;display:flex;align-items:flex-end;color:#fff;padding:160px 0 70px;overflow:hidden}
+.hero-bg{position:absolute;inset:0;background:url(img/hero.jpg) center/cover;transform:scale(1.08);animation:zoom 14s var(--ease) forwards}
+@keyframes zoom{to{transform:scale(1)}}
+.hero::after{content:"";position:absolute;inset:0;background:linear-gradient(180deg,rgba(10,31,19,.55) 0%,rgba(10,31,19,.15) 35%,rgba(10,31,19,.85) 100%)}
+.hero .container{position:relative;z-index:2}
+.pill{display:inline-flex;align-items:center;gap:8px;background:rgba(255,255,255,.12);border:1px solid rgba(255,255,255,.25);backdrop-filter:blur(8px);
+  padding:7px 14px;border-radius:999px;font-size:.82rem;margin-bottom:22px}
+.pill i{width:8px;height:8px;border-radius:50%;background:var(--lime);box-shadow:0 0 0 4px rgba(184,224,90,.25)}
+.hero h1{color:#fff;font-size:clamp(2.7rem,7vw,5.6rem);max-width:900px;margin-bottom:22px}
+.hero h1 em{color:var(--lime)}
+.hero p{font-size:clamp(1rem,1.6vw,1.2rem);color:#dfe9e1;max-width:560px;margin-bottom:34px}
+.hero .actions{display:flex;gap:12px;flex-wrap:wrap}
+.hero-stats{display:grid;grid-template-columns:repeat(3,auto);justify-content:start;gap:clamp(24px,5vw,64px);margin-top:56px;padding-top:28px;border-top:1px solid rgba(255,255,255,.2)}
+.hero-stats strong{display:block;font-family:Fraunces,serif;font-weight:400;font-size:clamp(2rem,4vw,2.8rem);line-height:1;color:#fff}
+.hero-stats span{font-size:.85rem;color:#c3d3c7}
+
+/* ---------- Marquee ---------- */
+.marquee{background:var(--g900);color:var(--lime);overflow:hidden;padding:18px 0;white-space:nowrap}
+.marquee div{display:inline-flex;gap:48px;animation:slide 30s linear infinite;font-family:Fraunces,serif;font-size:1.3rem;font-style:italic}
+.marquee span::after{content:"✦";margin-left:48px;color:rgba(184,224,90,.5);font-style:normal}
+@keyframes slide{to{transform:translateX(-50%)}}
+
+/* ---------- About ---------- */
+.about .container{display:grid;grid-template-columns:1fr 1fr;gap:clamp(40px,6vw,90px);align-items:center}
+.about h2{margin-bottom:22px}
+.about p{color:var(--muted);margin-bottom:16px}
+.ticks{list-style:none;display:grid;grid-template-columns:1fr 1fr;gap:12px;margin-top:28px}
+.ticks li{display:flex;gap:10px;align-items:center;font-weight:500}
+.ticks li::before{content:"✓";width:26px;height:26px;flex:none;border-radius:50%;background:var(--lime);color:var(--g900);display:grid;place-items:center;font-size:.8rem;font-weight:700}
+.about-media{position:relative}
+.about-media .main{border-radius:var(--r);aspect-ratio:4/5;object-fit:cover;width:85%}
+.about-media .float{position:absolute;right:0;bottom:-30px;width:48%;aspect-ratio:1;object-fit:cover;border-radius:var(--r);border:8px solid var(--cream)}
+.about-media .badge{position:absolute;left:-20px;top:30px;background:#fff;border-radius:18px;padding:16px 20px;box-shadow:0 20px 50px rgba(0,0,0,.12)}
+.about-media .badge strong{font-family:Fraunces,serif;font-size:2rem;color:var(--g600);display:block;line-height:1}
+.about-media .badge span{font-size:.8rem;color:var(--muted)}
+
+/* ---------- Services bento ---------- */
+.services{background:#fff}
+.head{display:flex;justify-content:space-between;align-items:end;gap:30px;flex-wrap:wrap;margin-bottom:48px}
+.bento{display:grid;grid-template-columns:repeat(4,1fr);grid-auto-rows:270px;gap:18px}
+.tile{position:relative;border-radius:var(--r);overflow:hidden;color:#fff;isolation:isolate;text-decoration:none}
+.tile img{position:absolute;inset:0;width:100%;height:100%;object-fit:cover;z-index:-2;transition:transform .8s var(--ease)}
+.tile::after{content:"";position:absolute;inset:0;z-index:-1;background:linear-gradient(180deg,transparent 30%,rgba(10,31,19,.88))}
+.tile:hover img{transform:scale(1.07)}
+.tile .in{position:absolute;inset:auto 0 0 0;padding:26px}
+.tile h3{color:#fff;font-size:1.5rem;margin-bottom:6px}
+.tile p{font-size:.92rem;color:#d8e4da;max-width:440px}
+.tile .tag{position:absolute;top:18px;left:18px;background:rgba(255,255,255,.16);backdrop-filter:blur(8px);border:1px solid rgba(255,255,255,.25);padding:5px 12px;border-radius:999px;font-size:.75rem;font-weight:600}
+.t-big{grid-column:span 2;grid-row:span 2}
+.t-wide{grid-column:span 2}
+
+/* ---------- Accordions (smooth drop-down) ---------- */
+.split{display:grid;grid-template-columns:.9fr 1.1fr;gap:clamp(40px,6vw,80px);align-items:start}
+.split .sticky{position:sticky;top:120px}
+.split .sticky img{border-radius:var(--r);aspect-ratio:4/3;object-fit:cover;width:100%;margin-top:28px}
+.acc{border-top:1px solid #d9ddd2}
+.acc-item{border-bottom:1px solid #d9ddd2}
+.acc-btn{width:100%;display:flex;justify-content:space-between;align-items:center;gap:16px;background:none;border:0;cursor:pointer;
+  padding:24px 0;text-align:left;font:600 1.15rem Fraunces,serif;color:var(--g900)}
+.acc-btn .num{font:600 .8rem Inter,sans-serif;color:var(--g500);margin-right:14px}
+.acc-btn .plus{width:38px;height:38px;flex:none;border-radius:50%;border:1px solid #cfd5c8;position:relative;transition:background .3s,transform .4s var(--ease)}
+.acc-btn .plus::before,.acc-btn .plus::after{content:"";position:absolute;left:50%;top:50%;width:12px;height:1.5px;background:var(--g900);transform:translate(-50%,-50%);transition:transform .4s var(--ease)}
+.acc-btn .plus::after{transform:translate(-50%,-50%) rotate(90deg)}
+.acc-item.open .plus{background:var(--lime);border-color:var(--lime);transform:rotate(180deg)}
+.acc-item.open .plus::after{transform:translate(-50%,-50%) rotate(0)}
+.acc-panel{display:grid;grid-template-rows:0fr;transition:grid-template-rows .5s var(--ease)}
+.acc-item.open .acc-panel{grid-template-rows:1fr}
+.acc-panel > div{overflow:hidden}
+.acc-panel .inner{padding:0 0 26px 0;color:var(--muted);opacity:0;transform:translateY(-8px);transition:opacity .4s .05s,transform .5s var(--ease)}
+.acc-item.open .inner{opacity:1;transform:none}
+.acc-panel ul{list-style:none;display:grid;grid-template-columns:1fr 1fr;gap:8px 18px;margin-top:10px}
+.acc-panel li{padding-left:18px;position:relative;font-size:.95rem}
+.acc-panel li::before{content:"";position:absolute;left:0;top:10px;width:7px;height:7px;border-radius:50%;background:var(--g500)}
+
+/* ---------- Landscaping section (dark) ---------- */
+.landscaping{background:var(--g950);color:#cfdcd2}
+.landscaping h2,.landscaping .acc-btn{color:#fff}
+.landscaping .lead{color:#a9bcae}
+.landscaping .acc,.landscaping .acc-item{border-color:rgba(255,255,255,.14)}
+.landscaping .acc-btn .plus{border-color:rgba(255,255,255,.3)}
+.landscaping .acc-btn .plus::before,.landscaping .acc-btn .plus::after{background:#fff}
+.landscaping .acc-item.open .plus::before,.landscaping .acc-item.open .plus::after{background:var(--g900)}
+.landscaping .acc-panel .inner{color:#a9bcae}
+.landscaping .eyebrow{color:var(--lime)}
+
+/* ---------- Gallery ---------- */
+.gallery-grid{columns:3 280px;column-gap:18px}
+.gallery-grid figure{break-inside:avoid;margin-bottom:18px;position:relative;border-radius:18px;overflow:hidden}
+.gallery-grid img{width:100%;transition:transform .8s var(--ease)}
+.gallery-grid figure:hover img{transform:scale(1.05)}
+.gallery-grid figcaption{position:absolute;left:12px;bottom:12px;background:rgba(255,255,255,.92);color:var(--g900);font-weight:600;font-size:.82rem;padding:6px 12px;border-radius:999px}
+
+/* ---------- Reviews ---------- */
+.reviews{background:var(--sand)}
+.review-box{display:grid;grid-template-columns:1.1fr .9fr;gap:40px;align-items:center;background:#fff;border-radius:28px;padding:clamp(28px,5vw,56px)}
+.g-logo{display:inline-flex;align-items:center;gap:10px;font-weight:600;margin-bottom:14px}
+.g-logo b{font:700 1.4rem Arial,sans-serif;letter-spacing:-.02em}
+.stars{color:#f4b400;font-size:1.6rem;letter-spacing:4px}
+.review-box p{color:var(--muted);margin:14px 0 24px}
+.clients-list{display:flex;flex-wrap:wrap;gap:10px}
+.clients-list span{background:var(--cream);border:1px solid #e1e4da;border-radius:999px;padding:9px 16px;font-size:.88rem;font-weight:500}
+
+/* ---------- Contact ---------- */
+.contact .container{display:grid;grid-template-columns:.9fr 1.1fr;gap:clamp(40px,6vw,80px)}
+.contact h2{margin-bottom:18px}
+.c-list{list-style:none;margin-top:30px;display:grid;gap:12px}
+.c-list a,.c-list div.c{display:flex;gap:16px;align-items:center;padding:16px 18px;border-radius:16px;background:#fff;text-decoration:none;transition:transform .25s var(--ease),box-shadow .25s}
+.c-list a:hover{transform:translateX(4px);box-shadow:0 10px 26px rgba(10,31,19,.08)}
+.c-list .ico{width:44px;height:44px;border-radius:12px;background:var(--g900);color:var(--lime);display:grid;place-items:center;font-size:1.1rem;flex:none}
+.c-list small{display:block;color:var(--muted);font-size:.74rem;text-transform:uppercase;letter-spacing:.1em}
+.c-list strong{font-weight:600;overflow-wrap:anywhere}
+.c-list a > div,.c-list div.c > div{min-width:0}
+form{background:#fff;border-radius:28px;padding:clamp(24px,4vw,40px);box-shadow:0 30px 70px rgba(10,31,19,.08);display:grid;grid-template-columns:1fr 1fr;gap:16px}
+form .full{grid-column:1/-1}
+label{font-size:.8rem;font-weight:600;color:var(--g900);display:block;margin-bottom:6px}
+input,select,textarea{width:100%;padding:13px 15px;border:1px solid #dde2d8;border-radius:12px;font:inherit;background:var(--cream);transition:border .2s,box-shadow .2s}
+input:focus,select:focus,textarea:focus{outline:0;border-color:var(--g500);box-shadow:0 0 0 4px rgba(60,138,88,.15);background:#fff}
+textarea{min-height:120px;resize:vertical}
+.note{font-size:.78rem;color:var(--muted);margin-top:10px}
+
+footer{background:var(--g950);color:#a9bcae;padding:56px 0 40px;font-size:.9rem}
+footer .container{display:flex;justify-content:space-between;flex-wrap:wrap;gap:16px;align-items:center}
+footer strong{color:#fff}
+
+/* ---------- Reveal on scroll ---------- */
+.reveal{opacity:0;transform:translateY(28px);transition:opacity .9s var(--ease),transform .9s var(--ease)}
+.reveal.in{opacity:1;transform:none}
+@media (prefers-reduced-motion:reduce){*{animation:none!important;transition:none!important}.reveal{opacity:1;transform:none}}
+
+/* ---------- Responsive ---------- */
+@media (max-width:1000px){
+  .bento{grid-template-columns:1fr 1fr;grid-auto-rows:240px}
+  .t-big{grid-column:span 2;grid-row:span 1}
+  .about .container,.split,.contact .container,.review-box{grid-template-columns:1fr}
+  .split .sticky{position:static}
+  .about-media{max-width:520px}
+}
+@media (max-width:860px){
+  .burger{display:block}
+  .nav-cta{display:none}
+  /* mobile menu: smooth slide-down drawer, not a pop-up */
+  .menu{position:absolute;top:100%;left:0;right:0;flex-direction:column;align-items:stretch;gap:0;
+    background:rgba(10,31,19,.97);backdrop-filter:blur(14px);padding:0 4%;
+    max-height:0;overflow:hidden;transition:max-height .55s var(--ease),padding .4s var(--ease)}
+  .nav.open .menu{max-height:80vh;overflow:auto;padding:8px 4% 22px}
+  .menu > li{opacity:0;transform:translateY(-10px);transition:opacity .35s,transform .45s var(--ease);border-bottom:1px solid rgba(255,255,255,.08)}
+  .nav.open .menu > li{opacity:1;transform:none}
+  .nav.open .menu > li:nth-child(2){transition-delay:.05s}.nav.open .menu > li:nth-child(3){transition-delay:.1s}
+  .nav.open .menu > li:nth-child(4){transition-delay:.15s}.nav.open .menu > li:nth-child(5){transition-delay:.2s}.nav.open .menu > li:nth-child(6){transition-delay:.25s}
+  .menu > li > a,.menu > li > button{width:100%;justify-content:space-between;padding:16px 4px;font-size:1.05rem;border-radius:0}
+  .menu > li > a:hover,.menu > li > button:hover{background:none}
+  /* nested services list also drops down smoothly */
+  .drop{position:static;width:auto;transform:none;opacity:1;visibility:visible;box-shadow:none;background:rgba(255,255,255,.05);
+    padding:0 8px;display:grid;grid-template-rows:0fr;transition:grid-template-rows .45s var(--ease),padding .3s}
+  .drop > div{overflow:hidden}
+  .has-drop:hover .drop{transform:none}
+  .has-drop.sub-open .drop{grid-template-rows:1fr;padding:8px;margin-bottom:12px}
+  .has-drop:hover .chev{transform:none}
+  .has-drop.sub-open .chev{transform:rotate(180deg)}
+  .drop a{color:#eef5ef}.drop a:hover{background:rgba(255,255,255,.06)}
+  .drop span{color:#a9bcae}
+  .brand small{display:none}
+  .demo-bar{font-size:.68rem;letter-spacing:.04em}
+}
+@media (max-width:600px){
+  .bento{grid-template-columns:1fr;grid-auto-rows:240px}
+  .t-big,.t-wide{grid-column:span 1}
+  .ticks,.acc-panel ul,form{grid-template-columns:1fr}
+  .hero-stats{grid-template-columns:repeat(3,1fr);gap:14px}
+  .hero-stats span{font-size:.74rem;line-height:1.3;display:block;margin-top:6px}
+  .about-media .badge{left:10px}
+  .demo-stamp{right:12px;bottom:12px;font-size:.74rem;padding:7px 12px}
+  .c-list strong{font-size:.9rem}
+}
+</style>
+</head>
+<body>
+
+<div class="watermark" aria-hidden="true"></div>
+<div class="demo-stamp">DEMO by Joseph</div>
+<div class="scrim" id="scrim"></div>
+
+<div class="topbar">
+  <div class="demo-bar">⚠ Demo by Joseph · Redesign concept – not the live site</div>
+  <header class="nav" id="nav">
+    <div class="container nav-inner">
+      <a href="#top" class="brand">
+        <span class="brand-mark">SJ</span>
+        <span><strong>St James Landscapes</strong><small>North Yorkshire · Family run</small></span>
+      </a>
+      <ul class="menu" id="menu">
+        <li><a href="#about">About</a></li>
+        <li class="has-drop">
+          <button type="button" class="sub-toggle" aria-expanded="false">Services
+            <svg class="chev" viewBox="0 0 10 10"><path d="M1 3l4 4 4-4" fill="none" stroke="currentColor" stroke-width="1.6"/></svg></button>
+          <div class="drop"><div>
+            <a href="#gardening"><img src="img/mowing.jpg" alt=""><div><strong>Garden Maintenance</strong><span>Lawns, hedges, borders &amp; tidy-ups</span></div></a>
+            <a href="#landscaping"><img src="img/deck.jpg" alt=""><div><strong>Landscaping</strong><span>Patios, decking, driveways &amp; more</span></div></a>
+            <a href="#services"><img src="img/drive.jpg" alt=""><div><strong>Commercial</strong><span>Business parks, surgeries, churches</span></div></a>
+            <a href="#gardening"><img src="img/lights.jpg" alt=""><div><strong>Winter Services</strong><span>Snow clearing &amp; gritting</span></div></a>
+          </div></div>
+        </li>
+        <li><a href="#landscaping">Landscaping</a></li>
+        <li><a href="#gallery">Gallery</a></li>
+        <li><a href="#reviews">Reviews</a></li>
+        <li><a href="#contact">Contact</a></li>
+      </ul>
+      <a href="#contact" class="btn nav-cta">Free Quote →</a>
+      <button class="burger" id="burger" aria-label="Open menu" aria-expanded="false"><span></span><span></span><span></span></button>
+    </div>
+  </header>
+</div>
+
+<main id="top">
+  <section class="hero">
+    <div class="hero-bg"></div>
+    <div class="container">
+      <span class="pill"><i></i> Now taking bookings across Yorkshire</span>
+      <h1>Gardens that feel like <em>home</em>, built to last.</h1>
+      <p>Family-run landscaping and garden maintenance from North Yorkshire — over 10 years in business and 70+ years of combined gardening experience.</p>
+      <div class="actions">
+        <a href="#contact" class="btn">Get a free quote →</a>
+        <a href="#gallery" class="btn ghost">View our work</a>
+      </div>
+      <div class="hero-stats">
+        <div><strong>10+</strong><span>Years in business</span></div>
+        <div><strong>70+</strong><span>Years' experience</span></div>
+        <div><strong>5+</strong><span>Years with BNI</span></div>
+      </div>
+    </div>
+  </section>
+
+  <div class="marquee" aria-hidden="true"><div>
+    <span>Patios</span><span>Decking</span><span>Driveways</span><span>Lawn care</span><span>Hedge trimming</span><span>Water features</span><span>Fencing</span><span>Garden lighting</span>
+    <span>Patios</span><span>Decking</span><span>Driveways</span><span>Lawn care</span><span>Hedge trimming</span><span>Water features</span><span>Fencing</span><span>Garden lighting</span>
+  </div></div>
+
+  <section class="about" id="about">
+    <div class="container">
+      <div class="reveal">
+        <span class="eyebrow">About us</span>
+        <h2>Quality work, <em>friendly</em> people, gardens you'll love.</h2>
+        <p>We pride ourselves on quality workmanship and excellent service.</p>
+        <p>We listen to what you want, work efficiently and look after you long after the job is done. Large or small, every project gets our full attention. We've also been proud members of BNI (Business Network International) for over 5 years.</p>
+        <ul class="ticks">
+          <li>Free, no-obligation quotes</li><li>Family-run business</li>
+          <li>Fully bespoke designs</li><li>Covering all of Yorkshire</li>
+        </ul>
+      </div>
+      <div class="about-media reveal">
+        <img class="main" src="img/country.jpg" alt="Well kept country garden">
+        <img class="float" src="img/trim.jpg" alt="Gardener trimming a lawn edge">
+        <div class="badge"><strong>70+</strong><span>years of combined<br>gardening experience</span></div>
+      </div>
+    </div>
+  </section>
+
+  <section class="services" id="services">
+    <div class="container">
+      <div class="head reveal">
+        <div><span class="eyebrow">What we do</span><h2>Everything your <em>outdoor space</em> needs</h2></div>
+        <p class="lead">From full design and build to regular upkeep — for homeowners, landlords and commercial sites.</p>
+      </div>
+      <div class="bento">
+        <a href="#landscaping" class="tile t-big reveal"><img src="img/borders.jpg" alt=""><span class="tag">Design &amp; build</span>
+          <div class="in"><h3>Construction &amp; Landscaping</h3><p>Site clearance, materials, decking, patios, water features, fencing, turfing and planting — start to finish.</p></div></a>
+        <a href="#gardening" class="tile reveal"><img src="img/mowing.jpg" alt=""><span class="tag">Regular or one-off</span>
+          <div class="in"><h3>Maintenance</h3><p>Lawns, hedges &amp; borders.</p></div></a>
+        <a href="#landscaping" class="tile reveal"><img src="img/patio.jpg" alt=""><span class="tag">Outdoor living</span>
+          <div class="in"><h3>Patios</h3><p>Paved areas built for your lifestyle.</p></div></a>
+        <a href="#gardening" class="tile t-wide reveal"><img src="img/drive.jpg" alt=""><span class="tag">Commercial</span>
+          <div class="in"><h3>Commercial Grounds</h3><p>Industrial parks, retirement complexes, surgeries, churches and pubs.</p></div></a>
+      </div>
+    </div>
+  </section>
+
+  <section id="gardening">
+    <div class="container split">
+      <div class="sticky reveal">
+        <span class="eyebrow">Gardening</span>
+        <h2>Let us do the <em>hard work</em> — you enjoy the garden.</h2>
+        <p class="lead" style="margin-top:16px">Weekly, fortnightly, monthly or a one-off tidy-up. Tap a service to see what's included.</p>
+        <img src="img/lawn.jpg" alt="Neat lawn and planting">
+      </div>
+      <div class="acc reveal">
+        <div class="acc-item open">
+          <button class="acc-btn" aria-expanded="true"><span><span class="num">01</span>Lawn care</span><span class="plus"></span></button>
+          <div class="acc-panel"><div><div class="inner">Keep your lawn thick, green and healthy all year round.
+            <ul><li>Regular mowing</li><li>Feeding</li><li>Aeration</li><li>Scarifying</li></ul></div></div></div>
+        </div>
+        <div class="acc-item">
+          <button class="acc-btn" aria-expanded="false"><span><span class="num">02</span>Hedges, shrubs &amp; trees</span><span class="plus"></span></button>
+          <div class="acc-panel"><div><div class="inner">Neat, healthy growth with the right cut at the right time.
+            <ul><li>Hedge cutting</li><li>Shrub trimming</li><li>Small tree pruning</li><li>Fruit tree pruning</li></ul></div></div></div>
+        </div>
+        <div class="acc-item">
+          <button class="acc-btn" aria-expanded="false"><span><span class="num">03</span>Borders &amp; general upkeep</span><span class="plus"></span></button>
+          <div class="acc-panel"><div><div class="inner">Everything that keeps a garden looking cared for.
+            <ul><li>Borders tidied &amp; weeded</li><li>Weed control in gravel</li><li>Fences painted</li><li>Patios power-washed</li></ul></div></div></div>
+        </div>
+        <div class="acc-item">
+          <button class="acc-btn" aria-expanded="false"><span><span class="num">04</span>Seasonal &amp; winter services</span><span class="plus"></span></button>
+          <div class="acc-panel"><div><div class="inner">Autumn clear-ups and winter safety for homes and businesses.
+            <ul><li>Autumn leaf clearance</li><li>Garden waste disposal</li><li>Snow &amp; ice clearing</li><li>Preventative gritting</li></ul></div></div></div>
+        </div>
+        <div class="acc-item">
+          <button class="acc-btn" aria-expanded="false"><span><span class="num">05</span>Commercial contracts</span><span class="plus"></span></button>
+          <div class="acc-panel"><div><div class="inner">Reliable grounds maintenance with regular schedules.
+            <ul><li>Industrial parks</li><li>Retirement complexes</li><li>Doctors' surgeries</li><li>Churches &amp; pubs</li></ul></div></div></div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section class="landscaping" id="landscaping">
+    <div class="container split">
+      <div class="sticky reveal">
+        <span class="eyebrow">Landscaping</span>
+        <h2 style="color:#fff">Extend your living space <em style="color:var(--lime)">outdoors</em>.</h2>
+        <p class="lead" style="margin-top:16px">High-quality work at competitive prices, using natural and concrete materials so the finished job is functional, practical and made for you. A well-designed garden can even help your home sell faster.</p>
+        <img src="img/deck.jpg" alt="New garden decking">
+      </div>
+      <div class="acc reveal">
+        <div class="acc-item open">
+          <button class="acc-btn" aria-expanded="true"><span><span class="num">01</span>Patios &amp; paved areas</span><span class="plus"></span></button>
+          <div class="acc-panel"><div><div class="inner">Bring the outdoors in. Paved areas designed around your lifestyle create the perfect space for entertaining and relaxing.</div></div></div>
+        </div>
+        <div class="acc-item">
+          <button class="acc-btn" aria-expanded="false"><span><span class="num">02</span>Driveways</span><span class="plus"></span></button>
+          <div class="acc-panel"><div><div class="inner">Built to the highest standard, from the base materials to the final blocks you choose. A driveway is a big investment — we make sure it adds real value.</div></div></div>
+        </div>
+        <div class="acc-item">
+          <button class="acc-btn" aria-expanded="false"><span><span class="num">03</span>Fencing &amp; trellis</span><span class="plus"></span></button>
+          <div class="acc-panel"><div><div class="inner">Bespoke fencing that marks boundaries, adds security and looks great. Trellis work pairs with climbing plants to create a real focal point.</div></div></div>
+        </div>
+        <div class="acc-item">
+          <button class="acc-btn" aria-expanded="false"><span><span class="num">04</span>Decking &amp; water features</span><span class="plus"></span></button>
+          <div class="acc-panel"><div><div class="inner">Decking, turfing, planting and water features built to suit your space — with full site clearance and supply of materials.</div></div></div>
+        </div>
+        <div class="acc-item">
+          <button class="acc-btn" aria-expanded="false"><span><span class="num">05</span>Irrigation</span><span class="plus"></span></button>
+          <div class="acc-panel"><div><div class="inner">No more hosepipes or watering cans. Easy automatic watering keeps plants at their best — even while you're on holiday.</div></div></div>
+        </div>
+        <div class="acc-item">
+          <button class="acc-btn" aria-expanded="false"><span><span class="num">06</span>Lighting &amp; heating</span><span class="plus"></span></button>
+          <div class="acc-panel"><div><div class="inner">Fitted with accredited contractors to set the mood after dark — plus sensor lighting at gates and doors for added security.</div></div></div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section class="gallery" id="gallery">
+    <div class="container">
+      <div class="head reveal">
+        <div><span class="eyebrow">Gallery</span><h2>Spaces we <em>love</em> creating</h2></div>
+        <p class="lead">A look at the kind of gardens, patios and outdoor spaces we design, build and maintain.</p>
+      </div>
+      <div class="gallery-grid">
+        <figure class="reveal"><img src="img/arbor.jpg" alt="" loading="lazy"><figcaption>Garden arbour</figcaption></figure>
+        <figure class="reveal"><img src="img/patio2.jpg" alt="" loading="lazy"><figcaption>Modern patio</figcaption></figure>
+        <figure class="reveal"><img src="img/water.jpg" alt="" loading="lazy"><figcaption>Water feature</figcaption></figure>
+        <figure class="reveal"><img src="img/stonepath.jpg" alt="" loading="lazy"><figcaption>Stone pathway</figcaption></figure>
+        <figure class="reveal"><img src="img/lights.jpg" alt="" loading="lazy"><figcaption>Garden lighting</figcaption></figure>
+        <figure class="reveal"><img src="img/drive.jpg" alt="" loading="lazy"><figcaption>Block-paved driveway</figcaption></figure>
+        <figure class="reveal"><img src="img/path.jpg" alt="" loading="lazy"><figcaption>Gravel walkway</figcaption></figure>
+        <figure class="reveal"><img src="img/wheel.jpg" alt="" loading="lazy"><figcaption>Full garden service</figcaption></figure>
+      </div>
+    </div>
+  </section>
+
+  <section class="reviews" id="reviews">
+    <div class="container">
+      <div class="review-box reveal">
+        <div>
+          <div class="g-logo"><b><span style="color:#4285f4">G</span><span style="color:#ea4335">o</span><span style="color:#fbbc05">o</span><span style="color:#4285f4">g</span><span style="color:#34a853">l</span><span style="color:#ea4335">e</span></b> Reviews</div>
+          <h2>Happy with our work? <em>Tell people.</em></h2>
+          <p>Reviews help other local families and businesses find us — it only takes a minute.</p>
+          <a class="btn dark" href="https://www.google.com/search?q=St+James+Landscapes+Ltd+North+Yorkshire" target="_blank" rel="noopener">★ Leave a Google review</a>
+        </div>
+        <div>
+          <div class="stars">★★★★★</div>
+          <p style="margin:8px 0 18px"><strong style="color:var(--g900)">Trusted by clients across Yorkshire, including:</strong></p>
+          <div class="clients-list">
+            <span>Landlords</span><span>Letting agents</span><span>Private clients</span><span>Commercial clients</span><span>Facilities management</span><span>Parish councils</span>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section class="contact" id="contact">
+    <div class="container">
+      <div class="reveal">
+        <span class="eyebrow">Contact</span>
+        <h2>Let's talk about <em>your garden</em>.</h2>
+        <p class="lead">Share your ideas and our design and construction team will help bring them to life — with a free, no-obligation estimate.</p>
+        <div class="c-list">
+          <a href="tel:01845501051"><span class="ico">☎</span><div><small>Office</small><strong>01845 501051</strong></div></a>
+          <a href="tel:07754066137"><span class="ico">✆</span><div><small>Mobile</small><strong>07754 066137</strong></div></a>
+          <a href="mailto:tim.jackson@stjamesgarden.co.uk"><span class="ico">✉</span><div><small>Email</small><strong>tim.jackson@stjamesgarden.co.uk</strong></div></a>
+          <div class="c"><span class="ico">⌖</span><div><small>Area covered</small><strong>North Yorkshire &amp; wider Yorkshire</strong></div></div>
+        </div>
+      </div>
+      <form class="reveal" onsubmit="event.preventDefault();alert('Demo only – this form does not send.');">
+        <div><label for="n">Name *</label><input id="n" required></div>
+        <div><label for="c">Company</label><input id="c"></div>
+        <div><label for="t">Telephone *</label><input id="t" type="tel" required></div>
+        <div><label for="e">Email *</label><input id="e" type="email" required></div>
+        <div class="full"><label for="a">Address &amp; post code *</label><input id="a" required></div>
+        <div class="full"><label for="s">Service needed</label>
+          <select id="s"><option>Landscaping / construction</option><option>Garden maintenance</option><option>Commercial work</option><option>Winter services</option><option>Other</option></select></div>
+        <div class="full"><label for="m">Your enquiry *</label><textarea id="m" required></textarea></div>
+        <div class="full"><label for="h">How did you hear about us?</label><input id="h"></div>
+        <div class="full"><button class="btn dark" type="submit">Request my free quote →</button>
+          <p class="note">Demo form — submissions are not sent.</p></div>
+      </form>
+    </div>
+  </section>
+</main>
+
+<footer>
+  <div class="container">
+    <span>© 2026 <strong>St James Landscapes Ltd</strong> · North Yorkshire</span>
+    <span>Redesign concept — <strong>DEMO by Joseph</strong></span>
+  </div>
+</footer>
+
+<script>
+const nav=document.getElementById('nav'),burger=document.getElementById('burger'),menu=document.getElementById('menu');
+const scrim=document.getElementById('scrim');
+const setOpen=o=>{nav.classList.toggle('open',o);burger.setAttribute('aria-expanded',o);scrim.classList.toggle('on',o)};
+scrim.addEventListener('click',()=>setOpen(false));
+burger.addEventListener('click',()=>setOpen(!nav.classList.contains('open')));
+menu.querySelectorAll('a').forEach(a=>a.addEventListener('click',()=>setOpen(false)));
+document.querySelectorAll('.sub-toggle').forEach(b=>b.addEventListener('click',()=>{
+  const li=b.parentElement,o=!li.classList.contains('sub-open');li.classList.toggle('sub-open',o);b.setAttribute('aria-expanded',o);
+}));
+const onScroll=()=>nav.classList.toggle('solid',scrollY>40);onScroll();addEventListener('scroll',onScroll,{passive:true});
+
+document.querySelectorAll('.acc').forEach(acc=>acc.querySelectorAll('.acc-btn').forEach(btn=>btn.addEventListener('click',()=>{
+  const item=btn.parentElement,open=!item.classList.contains('open');
+  acc.querySelectorAll('.acc-item').forEach(i=>{i.classList.remove('open');i.querySelector('.acc-btn').setAttribute('aria-expanded',false)});
+  if(open){item.classList.add('open');btn.setAttribute('aria-expanded',true)}
+})));
+
+const io=new IntersectionObserver(es=>es.forEach(e=>{if(e.isIntersecting){e.target.classList.add('in');io.unobserve(e.target)}}),{threshold:.12});
+document.querySelectorAll('.reveal').forEach(el=>io.observe(el));
+</script>
+</body>
+</html>
