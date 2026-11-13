@@ -1,0 +1,637 @@
+<!DOCTYPE html>
+<html lang="en-GB">
+<head>
+<meta charset="utf-8">
+<meta name="robots" content="noindex,nofollow">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Aqua Clean Services | Window &amp; Exterior Cleaning in Milton Keynes</title>
+<meta name="description" content="Premium window, gutter, conservatory, fascia, cladding, solar panel and pressure washing services across Milton Keynes. Fully insured and guaranteed.">
+<meta name="theme-color" content="#06243a">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,400;9..144,500;9..144,600&family=Inter:wght@400;500;600&display=swap" rel="stylesheet">
+<style>
+:root{
+  --navy:#06243a; --navy-2:#0a3250; --blue:#1182c4; --aqua:#4cc3e6; --aqua-soft:#d9f1fa;
+  --grey:#6f7782; --ink:#12222f; --mist:#f1f8fc; --line:#dbe7ef; --white:#fff;
+  --serif:"Fraunces",Georgia,serif; --sans:"Inter",system-ui,-apple-system,"Segoe UI",sans-serif;
+  --r:22px; --shadow:0 24px 60px -28px rgba(6,36,58,.45);
+  --ease:cubic-bezier(.22,.8,.24,1);
+}
+*{box-sizing:border-box;margin:0;padding:0}
+html{scroll-behavior:smooth;scroll-padding-top:84px}
+body{font-family:var(--sans);color:var(--ink);background:#fff;line-height:1.65;-webkit-font-smoothing:antialiased;overflow-x:hidden}
+img{display:block;max-width:100%}
+a{color:inherit;text-decoration:none}
+.wrap{width:min(1200px,100% - 48px);margin-inline:auto}
+:focus-visible{outline:3px solid var(--aqua);outline-offset:3px;border-radius:6px}
+.skip{position:absolute;left:-999px;top:8px;background:var(--navy);color:#fff;padding:10px 16px;border-radius:8px;z-index:100}
+.skip:focus{left:8px}
+
+h1,h2,h3{font-family:var(--serif);font-weight:500;line-height:1.08;letter-spacing:-.015em;color:var(--navy)}
+h1{font-size:clamp(2.7rem,6.2vw,5rem)}
+h2{font-size:clamp(2rem,4vw,3.1rem)}
+h3{font-size:1.4rem;line-height:1.2}
+em{font-style:italic;color:var(--blue)}
+.eyebrow{display:inline-flex;align-items:center;gap:10px;font-size:.78rem;font-weight:600;letter-spacing:.16em;text-transform:uppercase;color:var(--blue);margin-bottom:18px}
+.eyebrow::before{content:"";width:28px;height:1.5px;background:currentColor}
+.lede{font-size:1.12rem;color:#43525e;max-width:56ch}
+
+.btn{display:inline-flex;align-items:center;gap:10px;padding:15px 28px;border-radius:999px;font-weight:600;font-size:.96rem;border:1.5px solid transparent;cursor:pointer;font-family:inherit;transition:transform .35s var(--ease),background .25s,box-shadow .35s,color .25s}
+.btn svg{width:18px;height:18px;transition:transform .35s var(--ease)}
+.btn:hover svg{transform:translateX(4px)}
+.btn-primary{background:var(--blue);color:#fff;box-shadow:0 14px 30px -12px rgba(17,130,196,.7)}
+.btn-primary:hover{background:#0d6fa9;transform:translateY(-2px)}
+.btn-ghost{border-color:var(--navy);color:var(--navy);background:transparent}
+.btn-ghost:hover{background:var(--navy);color:#fff}
+.btn-light{background:#fff;color:var(--navy)}
+.btn-light:hover{background:var(--aqua-soft);transform:translateY(-2px)}
+
+/* Header */
+header{position:fixed;inset:0 0 auto 0;z-index:50;transition:background .35s,box-shadow .35s,padding .35s}
+header .bar{display:flex;align-items:center;justify-content:space-between;height:84px;transition:height .35s}
+header.scrolled{background:rgba(255,255,255,.86);backdrop-filter:blur(16px) saturate(1.4);-webkit-backdrop-filter:blur(16px) saturate(1.4);box-shadow:0 1px 0 var(--line)}
+header.scrolled .bar{height:70px}
+.brand img{height:60px;width:auto;transition:height .35s}
+header.scrolled .brand img{height:50px}
+nav ul{display:flex;gap:34px;list-style:none;align-items:center}
+nav a.link{font-size:.92rem;font-weight:500;color:var(--navy);position:relative;padding:6px 0}
+nav a.link::after{content:"";position:absolute;left:0;bottom:0;height:1.5px;width:100%;background:var(--blue);transform:scaleX(0);transform-origin:left;transition:transform .4s var(--ease)}
+nav a.link:hover::after{transform:scaleX(1)}
+.nav-cta{padding:11px 22px;font-size:.9rem}
+.burger{display:none;width:46px;height:46px;border-radius:50%;border:1.5px solid var(--navy);background:transparent;cursor:pointer;position:relative}
+.burger span{position:absolute;left:12px;right:12px;height:1.5px;background:var(--navy);transition:transform .35s var(--ease),opacity .2s,top .35s var(--ease)}
+.burger span:nth-child(1){top:17px}.burger span:nth-child(2){top:22px}.burger span:nth-child(3){top:27px}
+.burger[aria-expanded=true] span:nth-child(1){top:22px;transform:rotate(45deg)}
+.burger[aria-expanded=true] span:nth-child(2){opacity:0}
+.burger[aria-expanded=true] span:nth-child(3){top:22px;transform:rotate(-45deg)}
+
+/* Hero */
+.hero{position:relative;padding:150px 0 90px;background:
+  radial-gradient(900px 500px at 85% 10%,var(--aqua-soft),transparent 65%),
+  linear-gradient(180deg,#f7fcff,#fff 90%);overflow:hidden}
+.hero-grid{display:grid;grid-template-columns:1.08fr .92fr;gap:64px;align-items:center}
+.hero h1{margin-bottom:26px}
+.hero .lede{margin-bottom:36px}
+.hero-actions{display:flex;flex-wrap:wrap;gap:14px;margin-bottom:44px}
+.hero-points{display:flex;flex-wrap:wrap;gap:12px 28px;list-style:none;font-size:.9rem;color:#43525e}
+.hero-points li{display:flex;align-items:center;gap:9px}
+.hero-points svg{width:18px;height:18px;color:var(--blue);flex:none}
+.hero-visual{position:relative;justify-self:end;width:min(470px,100%)}
+.arch{aspect-ratio:4/5.3;border-radius:999px 999px 28px 28px;overflow:hidden;box-shadow:var(--shadow);position:relative}
+.arch img{width:100%;height:100%;object-fit:cover;transform:scale(1.06);transition:transform 1.6s var(--ease)}
+.arch::after{content:"";position:absolute;inset:0;background:linear-gradient(180deg,rgba(6,36,58,0) 55%,rgba(6,36,58,.35))}
+.float-card{position:absolute;background:#fff;border-radius:18px;box-shadow:var(--shadow);padding:14px 18px;display:flex;align-items:center;gap:14px}
+.float-card.a{left:-46px;bottom:70px;animation:bob 6s ease-in-out infinite}
+.float-card.b{right:-18px;top:90px;padding:8px;animation:bob 7s ease-in-out -2s infinite}
+.float-card .ico{width:44px;height:44px;border-radius:50%;background:var(--aqua-soft);display:grid;place-items:center;color:var(--blue)}
+.float-card .ico svg{width:22px;height:22px}
+.float-card strong{display:block;font-size:.92rem;color:var(--navy);line-height:1.2}
+.float-card small{font-size:.76rem;color:var(--grey)}
+.float-card.b img{width:132px;height:100px;object-fit:cover;border-radius:12px}
+@keyframes bob{50%{transform:translateY(-10px)}}
+.drop{position:absolute;color:var(--aqua);opacity:.5;pointer-events:none}
+.drop.d1{width:34px;top:130px;left:46%;animation:bob 8s ease-in-out infinite}
+.drop.d2{width:20px;top:62%;left:4%;opacity:.35;animation:bob 9s ease-in-out -3s infinite}
+.drop.d3{width:46px;bottom:60px;right:7%;opacity:.28;animation:bob 10s ease-in-out -5s infinite}
+
+/* Marquee strip */
+.strip{background:var(--navy);color:#cfe6f3;padding:22px 0;overflow:hidden}
+.strip ul{display:flex;gap:56px;list-style:none;white-space:nowrap;width:max-content;animation:scroll 38s linear infinite;font-family:var(--serif);font-size:1.15rem}
+.strip li{display:flex;align-items:center;gap:56px}
+.strip li::after{content:"";width:7px;height:10px;background:var(--aqua);border-radius:50% 50% 50% 50%/62% 62% 38% 38%}
+@keyframes scroll{to{transform:translateX(-50%)}}
+
+section{padding:120px 0}
+.head{display:flex;justify-content:space-between;align-items:end;gap:40px;margin-bottom:56px;flex-wrap:wrap}
+.head .lede{max-width:44ch}
+
+/* Services bento */
+.bento{display:grid;grid-template-columns:repeat(12,1fr);gap:22px}
+.card{position:relative;border-radius:var(--r);overflow:hidden;background:var(--mist);min-height:340px;display:flex;flex-direction:column;justify-content:flex-end;isolation:isolate;transition:transform .5s var(--ease),box-shadow .5s}
+.card:hover{transform:translateY(-6px);box-shadow:var(--shadow)}
+.card img.bg{position:absolute;inset:0;width:100%;height:100%;object-fit:cover;z-index:-2;transition:transform 1.2s var(--ease)}
+.card:hover img.bg{transform:scale(1.06)}
+.card.photo::before{content:"";position:absolute;inset:0;z-index:-1;background:linear-gradient(180deg,rgba(6,36,58,0) 25%,rgba(6,36,58,.88))}
+.card.photo h3,.card.photo p{color:#fff}
+.card.photo p{color:#d3e6f1}
+.card .body{padding:30px}
+.card p{font-size:.95rem;color:#51606b;max-width:46ch;margin-top:10px}
+.card .num{position:absolute;top:24px;left:30px;font-family:var(--serif);font-size:.95rem;color:#fff;opacity:.85;letter-spacing:.1em}
+.card.plain{background:var(--mist);border:1px solid var(--line);justify-content:space-between}
+.card.plain .num{color:var(--blue)}
+.card.plain .icon{margin:70px 0 0 30px;width:54px;height:54px;color:var(--blue)}
+.c-a{grid-column:span 7}.c-b{grid-column:span 5}
+.c-c{grid-column:span 4}.c-d{grid-column:span 4}.c-e{grid-column:span 4}
+.c-f{grid-column:span 12;min-height:300px}
+.c-f .body{max-width:560px}
+
+/* Clean line */
+.clean{background:var(--navy);color:#fff;position:relative;overflow:hidden}
+.clean h2,.clean h3{color:#fff}
+.clean em{color:var(--aqua)}
+.clean .eyebrow{color:var(--aqua)}
+.clean .lede{color:#b9d3e2}
+.clean-grid{display:grid;grid-template-columns:1.25fr .75fr;gap:22px}
+.shot{position:relative;border-radius:var(--r);overflow:hidden;background:#0a3250}
+.shot img{width:100%;height:100%;object-fit:cover;transition:transform 1.2s var(--ease)}
+.shot:hover img{transform:scale(1.04)}
+.shot.big{grid-row:span 2;min-height:560px}
+.shot.sm{min-height:269px}
+.tag{position:absolute;left:18px;top:18px;background:rgba(255,255,255,.92);color:var(--navy);padding:7px 14px;border-radius:999px;font-size:.78rem;font-weight:600;letter-spacing:.06em;text-transform:uppercase;backdrop-filter:blur(6px)}
+.tag.good{background:var(--aqua);}
+.shot figcaption.cap{position:absolute;left:0;right:0;bottom:0;padding:70px 26px 24px;background:linear-gradient(180deg,transparent,rgba(6,36,58,.85));font-family:var(--serif);font-size:1.3rem}
+.bubble-bg{position:absolute;right:-120px;top:-120px;width:420px;opacity:.07;color:var(--aqua);pointer-events:none}
+
+/* Approach */
+.approach-grid{display:grid;grid-template-columns:.95fr 1.05fr;gap:80px;align-items:center}
+.van{position:relative}
+.van .frame{border-radius:var(--r);overflow:hidden;box-shadow:var(--shadow);aspect-ratio:4/3.4}
+.van .frame img{width:100%;height:100%;object-fit:cover}
+.van .badge{position:absolute;right:-22px;bottom:-26px;background:var(--blue);color:#fff;border-radius:20px;padding:22px 26px;box-shadow:var(--shadow);max-width:230px}
+.van .badge strong{display:block;font-family:var(--serif);font-size:1.5rem;line-height:1.15;font-weight:500}
+.van .badge small{font-size:.8rem;opacity:.9}
+.steps{list-style:none;margin:36px 0;counter-reset:s;display:grid;gap:0}
+.steps li{counter-increment:s;display:grid;grid-template-columns:62px 1fr;gap:6px 18px;padding:22px 0;border-top:1px solid var(--line)}
+.steps li:last-child{border-bottom:1px solid var(--line)}
+.steps li::before{content:"0" counter(s);font-family:var(--serif);font-size:1.5rem;color:var(--blue);grid-row:span 2}
+.steps b{font-family:var(--serif);font-weight:500;font-size:1.25rem;color:var(--navy)}
+.steps span{color:#51606b;font-size:.96rem}
+.chips{display:flex;flex-wrap:wrap;gap:10px;margin-top:8px}
+.chip{padding:9px 18px;border-radius:999px;background:var(--mist);border:1px solid var(--line);font-size:.86rem;font-weight:500;color:var(--navy)}
+
+/* Extras */
+.extras{background:var(--mist)}
+.extras-grid{display:grid;grid-template-columns:1fr 1fr;gap:72px;align-items:center}
+.extras ul{list-style:none;display:grid;gap:14px;margin-top:30px}
+.extras li{display:flex;gap:14px;align-items:center;font-size:1.02rem;padding:16px 20px;background:#fff;border-radius:16px;border:1px solid var(--line);transition:transform .35s var(--ease),border-color .3s}
+.extras li:hover{transform:translateX(8px);border-color:var(--aqua)}
+.extras li svg{width:22px;height:22px;color:var(--blue);flex:none}
+.extras .pic{position:relative;border-radius:var(--r);overflow:hidden;aspect-ratio:4/4.4;box-shadow:var(--shadow)}
+.extras .pic img{width:100%;height:100%;object-fit:cover}
+.extras .pic span{position:absolute;left:22px;bottom:22px;right:22px;background:rgba(255,255,255,.92);backdrop-filter:blur(8px);border-radius:16px;padding:16px 20px;font-size:.92rem;color:var(--navy)}
+
+/* Testimonials */
+.quotes{display:grid;grid-template-columns:repeat(3,1fr);gap:22px}
+.quote{padding:36px 32px;border-radius:var(--r);border:1px solid var(--line);background:#fff;display:flex;flex-direction:column;gap:22px;transition:transform .5s var(--ease),box-shadow .5s}
+.quote:hover{transform:translateY(-6px);box-shadow:var(--shadow)}
+.stars{display:flex;gap:3px;color:#f2b632}
+.stars svg{width:18px;height:18px}
+.quote p{font-family:var(--serif);font-size:1.12rem;line-height:1.5;color:var(--navy);flex:1}
+.quote footer{display:flex;align-items:center;gap:12px;font-size:.9rem;font-weight:600;color:var(--navy)}
+.quote footer i{width:40px;height:40px;border-radius:50%;background:var(--aqua-soft);display:grid;place-items:center;font-style:normal;font-family:var(--serif);color:var(--blue)}
+
+/* Contact */
+.contact{position:relative;color:#fff;background:var(--navy);overflow:hidden;isolation:isolate}
+.contact .bgimg{position:absolute;inset:0;z-index:-2;width:100%;height:100%;object-fit:cover;opacity:.5}
+.contact::before{content:"";position:absolute;inset:0;z-index:-1;background:linear-gradient(100deg,rgba(6,36,58,.96) 30%,rgba(6,36,58,.55))}
+.contact h2{color:#fff}.contact em{color:var(--aqua)}.contact .eyebrow{color:var(--aqua)}
+.contact-grid{display:grid;grid-template-columns:.9fr 1.1fr;gap:80px;align-items:start}
+.contact .lede{color:#c3dbe9;margin-bottom:40px}
+.details{list-style:none;display:grid;gap:22px}
+.details li{display:flex;gap:16px;align-items:flex-start}
+.details .ico{flex:none;width:46px;height:46px;border-radius:50%;border:1px solid rgba(255,255,255,.28);display:grid;place-items:center;color:var(--aqua)}
+.details .ico svg{width:20px;height:20px}
+.details small{display:block;font-size:.74rem;letter-spacing:.14em;text-transform:uppercase;color:#8fb5cb}
+.details a,.details span.v{font-size:1.08rem}
+.details a:hover{color:var(--aqua)}
+form{background:#fff;color:var(--ink);padding:40px;border-radius:26px;box-shadow:0 40px 80px -30px rgba(0,0,0,.6);display:grid;grid-template-columns:1fr 1fr;gap:18px}
+form h3{grid-column:1/-1;font-size:1.7rem;margin-bottom:2px}
+form .sub{grid-column:1/-1;color:var(--grey);font-size:.92rem;margin-top:-10px}
+.field{display:flex;flex-direction:column;gap:7px}
+.field.full{grid-column:1/-1}
+label{font-size:.8rem;font-weight:600;color:var(--navy);letter-spacing:.02em}
+input,select,textarea{font:inherit;font-size:.98rem;padding:14px 16px;border:1.5px solid var(--line);border-radius:14px;background:var(--mist);color:var(--ink);transition:border-color .25s,background .25s,box-shadow .25s;width:100%}
+textarea{min-height:120px;resize:vertical}
+input:focus,select:focus,textarea:focus{outline:none;border-color:var(--blue);background:#fff;box-shadow:0 0 0 4px rgba(17,130,196,.15)}
+/* Custom select */
+.select{position:relative}
+.select-trigger{display:flex;align-items:center;justify-content:space-between;gap:12px;width:100%;text-align:left;font:inherit;font-size:.98rem;padding:14px 16px;border:1.5px solid var(--line);border-radius:14px;background:var(--mist);color:var(--ink);cursor:pointer;transition:border-color .25s,background .25s,box-shadow .25s}
+.select-trigger:hover{border-color:#b9d6e6}
+.select-trigger:focus-visible,.select.open .select-trigger{outline:none;border-color:var(--blue);background:#fff;box-shadow:0 0 0 4px rgba(17,130,196,.15)}
+.select .chev{width:20px;height:20px;flex:none;color:var(--blue);transition:transform .35s var(--ease)}
+.select.open .chev{transform:rotate(180deg)}
+.select-menu{position:absolute;left:0;right:0;top:calc(100% + 8px);z-index:20;list-style:none;margin:0;padding:8px;background:#fff;border:1px solid var(--line);border-radius:16px;box-shadow:0 24px 50px -18px rgba(6,36,58,.35),0 2px 6px rgba(6,36,58,.06);max-height:min(400px,60vh);overflow-y:auto;overscroll-behavior:contain;opacity:0;visibility:hidden;transform:translateY(-6px) scale(.98);transform-origin:top;transition:opacity .22s var(--ease),transform .28s var(--ease),visibility 0s .28s}
+.select.open .select-menu{opacity:1;visibility:visible;transform:none;transition-delay:0s}
+.select-menu li{display:flex;align-items:center;justify-content:space-between;gap:12px;padding:11px 14px;border-radius:10px;font-size:.96rem;color:var(--ink);cursor:pointer;transition:background .15s,color .15s}
+.select-menu li.active{background:var(--aqua-soft)}
+.select-menu li[aria-selected=true]{color:var(--blue);font-weight:600}
+.select-menu li[aria-selected=true]::after{content:"";flex:none;width:18px;height:18px;background:url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24'%3E%3Cpath d='M5 12.5l4.5 4.5L19 7.5' fill='none' stroke='%231182c4' stroke-width='2.4' stroke-linecap='round' stroke-linejoin='round'/%3E%3C/svg%3E") center/contain no-repeat}
+form .btn{grid-column:1/-1;justify-content:center;padding:17px}
+.thanks{grid-column:1/-1;background:var(--aqua-soft);color:var(--navy);padding:16px 20px;border-radius:14px;font-size:.94rem;display:none}
+.thanks.show{display:block}
+
+/* Footer */
+footer.site{background:#031829;color:#8fb0c4;padding:56px 0 34px;font-size:.88rem}
+.foot{display:flex;justify-content:space-between;align-items:center;gap:30px;flex-wrap:wrap;padding-bottom:30px;border-bottom:1px solid rgba(255,255,255,.1)}
+.foot .logo-chip{background:#fff;border-radius:14px;padding:8px 14px}
+.foot .logo-chip img{height:46px}
+.foot ul{display:flex;gap:26px;list-style:none;flex-wrap:wrap}
+.foot a:hover{color:#fff}
+.legal{padding-top:26px;display:flex;justify-content:space-between;gap:16px;flex-wrap:wrap}
+
+/* Mobile call bar */
+.callbar{display:none;transition:opacity .25s,transform .35s var(--ease)}
+body.select-open .callbar{opacity:0;pointer-events:none;transform:translateY(20px)}
+
+/* Reveal */
+.reveal{opacity:0;transform:translateY(28px);transition:opacity .9s var(--ease),transform .9s var(--ease)}
+.reveal.in{opacity:1;transform:none}
+.reveal.d1{transition-delay:.1s}.reveal.d2{transition-delay:.2s}.reveal.d3{transition-delay:.3s}
+.arch.in img,.reveal.in .arch img{transform:scale(1)}
+
+@media (min-width:981px) and (max-height:860px){
+  .hero{padding:112px 0 56px}
+  h1{font-size:clamp(2.6rem,4.6vw,4.1rem)}
+  .hero h1{margin-bottom:20px}
+  .hero .lede{margin-bottom:26px;font-size:1.05rem}
+  .hero-actions{margin-bottom:28px}
+  .hero-visual{width:min(380px,100%)}
+}
+@media (max-width:980px){
+  section{padding:84px 0}
+  nav{position:fixed;inset:0 0 0 auto;width:min(86vw,360px);background:#fff;padding:110px 34px 34px;transform:translateX(100%);visibility:hidden;transition:transform .5s var(--ease),visibility 0s .5s;box-shadow:-30px 0 60px -30px rgba(6,36,58,.4)}
+  nav.open{transform:none;visibility:visible;transition-delay:0s}
+  nav ul{flex-direction:column;align-items:flex-start;gap:6px}
+  nav a.link{font-family:var(--serif);font-size:1.6rem;padding:8px 0}
+  nav .nav-cta{margin-top:20px}
+  .burger{display:block;z-index:60}
+  .hero{padding:124px 0 70px}
+  .hero-grid,.approach-grid,.extras-grid,.contact-grid{grid-template-columns:1fr;gap:48px}
+  .hero-visual{justify-self:center;width:min(400px,86%)}
+  .float-card.a{left:-14px}.float-card.b{right:-10px}
+  .bento{grid-template-columns:1fr 1fr}
+  .c-a,.c-f{grid-column:1/-1}
+  .c-b,.c-c,.c-d,.c-e{grid-column:auto}
+  .card{min-height:320px}
+  .c-a,.c-f{min-height:340px}
+  .clean-grid{grid-template-columns:1fr 1fr;gap:18px}
+  .shot.big{grid-column:1/-1;min-height:400px;grid-row:auto}
+  .shot.sm{min-height:260px}
+  .extras .pic{aspect-ratio:16/10}
+  .van .frame{aspect-ratio:16/11}
+  .quotes{grid-template-columns:1fr}
+  .van .badge{right:12px}
+  .bubble-bg{display:none}
+  form{grid-template-columns:1fr;padding:28px 22px}
+  .callbar{display:flex;position:fixed;left:14px;right:14px;bottom:14px;z-index:40;background:var(--navy);color:#fff;border-radius:999px;padding:8px 8px 8px 24px;align-items:center;justify-content:space-between;box-shadow:0 14px 40px -10px rgba(6,36,58,.7);font-weight:600;font-size:.94rem}
+  .callbar a.go{background:var(--aqua);color:var(--navy);padding:12px 22px;border-radius:999px}
+  footer.site{padding-bottom:100px}
+}
+@media (max-width:640px){
+  .wrap{width:min(1200px,100% - 40px)}
+  .bento,.clean-grid{grid-template-columns:1fr}
+  .c-a,.c-f{grid-column:auto}
+  .extras .pic{aspect-ratio:4/4.2}
+  .van .frame{aspect-ratio:4/3.4}
+  .shot.big{min-height:360px}
+  .card .body{padding:24px}
+  .card .num{left:24px}
+  .float-card.a{left:-8px;padding:10px 14px}
+  .float-card.b{right:-8px}
+  .float-card.b img{width:104px;height:80px}
+  form h3{font-size:1.45rem}
+}
+@media (prefers-reduced-motion:reduce){
+  *,*::before,*::after{animation:none!important;transition:none!important}
+  html{scroll-behavior:auto}
+  .reveal{opacity:1;transform:none}
+}
+</style>
+</head>
+<body>
+<a class="skip" href="#main">Skip to content</a>
+
+<svg width="0" height="0" style="position:absolute" aria-hidden="true">
+  <defs>
+    <symbol id="drop" viewBox="0 0 24 32"><path d="M12 1C12 1 2 14 2 21a10 10 0 0 0 20 0C22 14 12 1 12 1Z" fill="currentColor"/></symbol>
+    <symbol id="check" viewBox="0 0 24 24"><path d="M5 12.5l4.5 4.5L19 7.5" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"/></symbol>
+    <symbol id="arrow" viewBox="0 0 24 24"><path d="M5 12h14M13 6l6 6-6 6" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></symbol>
+    <symbol id="shield" viewBox="0 0 24 24"><path d="M12 3l7 3v5.5c0 4.6-3 8-7 9.5-4-1.5-7-4.9-7-9.5V6l7-3Z" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linejoin="round"/><path d="M8.8 12l2.2 2.2 4.2-4.4" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"/></symbol>
+    <symbol id="star" viewBox="0 0 24 24"><path d="M12 2.5l2.9 6.1 6.6.8-4.9 4.6 1.3 6.6L12 17.3l-5.9 3.3 1.3-6.6L2.5 9.4l6.6-.8L12 2.5Z" fill="currentColor"/></symbol>
+    <symbol id="phone" viewBox="0 0 24 24"><path d="M5 4h4l2 5-2.5 1.5a11 11 0 0 0 5 5L15 13l5 2v4a2 2 0 0 1-2 2A16 16 0 0 1 3 6a2 2 0 0 1 2-2Z" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linejoin="round"/></symbol>
+    <symbol id="mail" viewBox="0 0 24 24"><rect x="3" y="5" width="18" height="14" rx="2.5" fill="none" stroke="currentColor" stroke-width="1.7"/><path d="M3.5 7l8.5 6 8.5-6" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linejoin="round"/></symbol>
+    <symbol id="pin" viewBox="0 0 24 24"><path d="M12 21s7-6.2 7-11.5A7 7 0 0 0 5 9.5C5 14.800 12 21 12 21Z" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linejoin="round"/><circle cx="12" cy="9.500" r="2.500" fill="none" stroke="currentColor" stroke-width="1.7"/></symbol>
+    <symbol id="sparkle" viewBox="0 0 24 24"><path d="M12 3l1.8 5.700L19.500 10.500l-5.700 1.800L12 18l-1.800-5.700L4.500 10.500l5.700-1.800L12 3Z" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linejoin="round"/></symbol>
+    <symbol id="spray" viewBox="0 0 48 48"><path d="M8 20h18v22a2 2 0 0 1-2 2H10a2 2 0 0 1-2-2V20Zm4-8h10v8H12v-8Zm10 2h10l4-4" fill="none" stroke="currentColor" stroke-width="2" stroke-linejoin="round" stroke-linecap="round"/><path d="M40 12l4-2m-4 6l4 1m-5 5l3 3" stroke="currentColor" stroke-width="2" stroke-linecap="round"/></symbol>
+  </defs>
+</svg>
+
+<header id="top">
+  <div class="wrap bar">
+    <a class="brand" href="#top" aria-label="Aqua Clean Services home"><img src="assets/logo.png" alt="Aqua Clean Services" width="93" height="60"></a>
+    <nav id="nav" aria-label="Main">
+      <ul>
+        <li><a class="link" href="#services">Services</a></li>
+        <li><a class="link" href="#results">Results</a></li>
+        <li><a class="link" href="#approach">Our approach</a></li>
+        <li><a class="link" href="#reviews">Reviews</a></li>
+        <li><a class="btn btn-primary nav-cta" href="#contact">Get a quote</a></li>
+      </ul>
+    </nav>
+    <button class="burger" aria-label="Menu" aria-expanded="false" aria-controls="nav"><span></span><span></span><span></span></button>
+  </div>
+</header>
+
+<main id="main">
+<!-- HERO -->
+<section class="hero" style="padding-bottom:90px">
+  <svg class="drop d1" viewBox="0 0 24 32"><use href="#drop"/></svg>
+  <svg class="drop d2" viewBox="0 0 24 32"><use href="#drop"/></svg>
+  <svg class="drop d3" viewBox="0 0 24 32"><use href="#drop"/></svg>
+  <div class="wrap hero-grid">
+    <div>
+      <span class="eyebrow reveal">Milton Keynes &amp; surrounding areas</span>
+      <h1 class="reveal d1">Crystal clear,<br><em>every time.</em></h1>
+      <p class="lede reveal d2">Professional window and exterior cleaning for homes and businesses. Done right first time, with the care and attention to detail your property deserves.</p>
+      <div class="hero-actions reveal d3">
+        <a class="btn btn-primary" href="#contact">Request a quote <svg><use href="#arrow"/></svg></a>
+        <a class="btn btn-ghost" href="tel:07863146040">Call 07863 146040</a>
+      </div>
+      <ul class="hero-points reveal d3">
+        <li><svg><use href="#shield"/></svg>Fully insured &amp; guaranteed</li>
+        <li><svg><use href="#check"/></svg>Residential &amp; commercial</li>
+        <li><svg><use href="#drop"/></svg>Pure water, high reach</li>
+      </ul>
+    </div>
+    <div class="hero-visual reveal d2">
+      <div class="arch"><img src="assets/stock-squeegee.jpg" alt="Squeegee drawing across a freshly washed window" width="1100" height="1650"></div>
+      <div class="float-card a">
+        <span class="ico"><svg><use href="#sparkle"/></svg></span>
+        <div><strong>Spotless finish</strong><small>Windows, frames &amp; sills</small></div>
+      </div>
+      <div class="float-card b"><img src="assets/cladding-clean-line.jpg" alt="Cladding half cleaned, showing the clean line" width="132" height="100" loading="lazy"></div>
+    </div>
+  </div>
+</section>
+
+<div class="strip" aria-hidden="true">
+  <ul>
+    <li>Window cleaning</li><li>Conservatories</li><li>Gutters</li><li>Fascias &amp; soffits</li><li>Cladding</li><li>Solar panels</li><li>Pressure washing</li>
+    <li>Window cleaning</li><li>Conservatories</li><li>Gutters</li><li>Fascias &amp; soffits</li><li>Cladding</li><li>Solar panels</li><li>Pressure washing</li>
+  </ul>
+</div>
+
+<!-- SERVICES -->
+<section id="services">
+  <div class="wrap">
+    <div class="head">
+      <div><span class="eyebrow reveal">What we do</span><h2 class="reveal d1">Every surface,<br><em>restored.</em></h2></div>
+      <p class="lede reveal d2">From weekly window rounds to one-off deep cleans, we tailor the service to your property, and quote you fairly.</p>
+    </div>
+    <div class="bento">
+      <article class="card photo c-a reveal">
+        <img class="bg" src="assets/conservatory-windows.jpg" alt="Clean white uPVC windows and gutter on a conservatory" loading="lazy">
+        <span class="num">01</span>
+        <div class="body"><h3>Window cleaning</h3><p>Residential and commercial window cleaning to a consistently high standard, inside and out, including frames, doors and sills.</p></div>
+      </article>
+      <article class="card photo c-b reveal d1">
+        <img class="bg" src="assets/conservatory-roof.jpg" alt="Conservatory roof panels before cleaning" loading="lazy">
+        <span class="num">02</span>
+        <div class="body"><h3>Conservatory cleaning</h3><p>High reach pure water systems and safe professional products for roofs, frames and glass.</p></div>
+      </article>
+      <article class="card photo c-c reveal">
+        <img class="bg" src="assets/gutter.jpg" alt="Moss and debris in a gutter" loading="lazy">
+        <span class="num">03</span>
+        <div class="body"><h3>Gutter cleaning</h3><p>An annual clean helps you avoid expensive repairs. We'll advise what your roof and location need.</p></div>
+      </article>
+      <article class="card photo c-d reveal d1">
+        <img class="bg" src="assets/cladding-after.jpg" alt="Freshly cleaned white cladding and windows" loading="lazy">
+        <span class="num">04</span>
+        <div class="body"><h3>Fascias, soffits &amp; cladding</h3><p>Tired, dirty PVC returned to as-new condition, with the life and beauty back in your property.</p></div>
+      </article>
+      <article class="card photo c-e reveal d2">
+        <img class="bg" src="assets/stock-solar.jpg" alt="Close-up of solar panels reflecting the sky" loading="lazy">
+        <span class="num">05</span>
+        <div class="body"><h3>Solar panel cleaning</h3><p>The more dirt, the less electricity your panels generate. Keep them performing at their best.</p></div>
+      </article>
+      <article class="card photo c-f reveal">
+        <img class="bg" src="assets/stock-pressure.jpg" alt="Operator using a surface cleaner on a paved area" loading="lazy" style="object-position:center 18%">
+        <span class="num">06</span>
+        <div class="body"><h3>Pressure washing</h3><p>Paths, patios and driveways washed back to life. Once washed, we can sweep kiln-dried sand back into the gaps in block paving to help protect it.</p></div>
+      </article>
+    </div>
+  </div>
+</section>
+
+<!-- RESULTS -->
+<section id="results" class="clean">
+  <svg class="bubble-bg" viewBox="0 0 24 32"><use href="#drop"/></svg>
+  <div class="wrap">
+    <div class="head">
+      <div><span class="eyebrow reveal">Real results</span><h2 class="reveal d1">The clean line<br><em>says it all.</em></h2></div>
+      <p class="lede reveal d2">Cladding with years of algae and grime, caught halfway through a clean. The difference speaks for itself.</p>
+    </div>
+    <div class="clean-grid">
+      <figure class="shot big reveal">
+        <img src="assets/cladding-clean-line.jpg" alt="Cladding cleaned on the left, still dirty on the right" loading="lazy">
+        <span class="tag">Halfway there</span>
+        <figcaption class="cap">Clean on the left. Still to do on the right.</figcaption>
+      </figure>
+      <figure class="shot sm reveal d1">
+        <img src="assets/cladding-before.jpg" alt="Algae-stained cladding before cleaning" loading="lazy">
+        <span class="tag">Before</span>
+      </figure>
+      <figure class="shot sm reveal d2">
+        <img src="assets/cladding-after.jpg" alt="Cladding and windows after cleaning" loading="lazy">
+        <span class="tag good">After</span>
+      </figure>
+    </div>
+  </div>
+</section>
+
+<!-- APPROACH -->
+<section id="approach">
+  <div class="wrap approach-grid">
+    <div class="van reveal">
+      <div class="frame"><img src="assets/van.jpg" alt="Aqua Clean Services van with ladders" loading="lazy"></div>
+      <div class="badge"><strong>Fully insured &amp; guaranteed</strong><small>All works, every time</small></div>
+    </div>
+    <div>
+      <span class="eyebrow reveal">Our approach</span>
+      <h2 class="reveal d1">Done right<br><em>the first time.</em></h2>
+      <p class="lede reveal d2" style="margin-top:22px">Our experienced cleaners take great pride and attention to detail in every job, so you're left happy and confident that you're getting a great service at a competitive price.</p>
+      <ol class="steps reveal d2">
+        <li><b>Tell us what you need</b><span>Get in touch and we'll arrange a convenient time to visit your property.</span></li>
+        <li><b>Receive a fair quote</b><span>We work out exactly what's required and how often, then give you a competitive price.</span></li>
+        <li><b>Sit back and enjoy the shine</b><span>Your windows, fascias and guttering are left sparkling clean.</span></li>
+      </ol>
+      <div class="chips reveal d3"><span class="chip">Weekly</span><span class="chip">Fortnightly</span><span class="chip">Monthly</span><span class="chip">One-off cleans</span></div>
+    </div>
+  </div>
+</section>
+
+<!-- EXTRAS -->
+<section class="extras">
+  <div class="wrap extras-grid">
+    <div>
+      <span class="eyebrow reveal">The full exterior</span>
+      <h2 class="reveal d1">Look after your<br><em>number one investment.</em></h2>
+      <p class="lede reveal d2" style="margin-top:22px">Beyond windows, we offer a range of services to keep your property looking and working how it should.</p>
+      <ul class="reveal d2">
+        <li><svg><use href="#check"/></svg>Conservatory valets</li>
+        <li><svg><use href="#check"/></svg>Gutter clearing &amp; cleaning</li>
+        <li><svg><use href="#check"/></svg>Patio and decking cleaning</li>
+        <li><svg><use href="#check"/></svg>Driveway cleaning</li>
+        <li><svg><use href="#check"/></svg>Fascias and soffits cleaned</li>
+        <li><svg><use href="#check"/></svg>Full exterior house valets, all wrapped up in one very reasonable package</li>
+      </ul>
+    </div>
+    <div class="pic reveal d1">
+      <img src="assets/stock-solar-roof.jpg" alt="Rooftop solar array at sunset" loading="lazy">
+      <span>Homes and commercial buildings, cared for to the same high standard.</span>
+    </div>
+  </div>
+</section>
+
+<!-- REVIEWS -->
+<section id="reviews">
+  <div class="wrap">
+    <div class="head">
+      <div><span class="eyebrow reveal">Kind words</span><h2 class="reveal d1">Our customers <em>say.</em></h2></div>
+    </div>
+    <div class="quotes">
+      <blockquote class="quote reveal">
+        <div class="stars" aria-label="5 stars"><svg><use href="#star"/></svg><svg><use href="#star"/></svg><svg><use href="#star"/></svg><svg><use href="#star"/></svg><svg><use href="#star"/></svg></div>
+        <p>“Used Aqua Clean services today and what a fantastic job was done. Would highly recommend for personal use or business use. I shall be using again in the near future.”</p>
+        <footer><i>R</i>Ross Batchlor</footer>
+      </blockquote>
+      <blockquote class="quote reveal d1">
+        <div class="stars" aria-label="5 stars"><svg><use href="#star"/></svg><svg><use href="#star"/></svg><svg><use href="#star"/></svg><svg><use href="#star"/></svg><svg><use href="#star"/></svg></div>
+        <p>“Had my windows done inside and out, fantastic job done and can thoroughly recommend them. I know who will be cleaning my windows from now on.”</p>
+        <footer><i>J</i>Julie Pattinson</footer>
+      </blockquote>
+      <blockquote class="quote reveal d2">
+        <div class="stars" aria-label="5 stars"><svg><use href="#star"/></svg><svg><use href="#star"/></svg><svg><use href="#star"/></svg><svg><use href="#star"/></svg><svg><use href="#star"/></svg></div>
+        <p>“Just had the inside and outside of my windows, doors and sills all professionally cleaned. Done with fantastic care and attention to detail, very very pleased! See you in one month.”</p>
+        <footer><i>J</i>Julie Cameron</footer>
+      </blockquote>
+    </div>
+  </div>
+</section>
+
+<!-- CONTACT -->
+<section id="contact" class="contact">
+  <img class="bgimg" src="assets/stock-droplets.jpg" alt="" loading="lazy">
+  <div class="wrap contact-grid">
+    <div>
+      <span class="eyebrow reveal">Get in touch</span>
+      <h2 class="reveal d1">Ready for a<br><em>sparkling clean?</em></h2>
+      <p class="lede reveal d2" style="margin-top:22px">We cover Milton Keynes and the surrounding area. Tell us what you need and we'll get back to you with a quote.</p>
+      <ul class="details reveal d2">
+        <li><span class="ico"><svg><use href="#phone"/></svg></span><div><small>Call</small><a href="tel:07863146040">07863 146040</a></div></li>
+        <li><span class="ico"><svg><use href="#mail"/></svg></span><div><small>Email</small><a href="mailto:info@aquaclean-mk.co.uk">info@aquaclean-mk.co.uk</a></div></li>
+        <li><span class="ico"><svg><use href="#pin"/></svg></span><div><small>Based in</small><span class="v">90 Deacon Place, Middleton<br>Milton Keynes, MK10 9FT</span></div></li>
+      </ul>
+    </div>
+    <form id="quote" class="reveal d1" novalidate>
+      <h3>Request a free quote</h3>
+      <p class="sub">Fill in your details and we'll be in touch.</p>
+      <div class="field"><label for="name">Name</label><input id="name" name="name" autocomplete="name" required></div>
+      <div class="field"><label for="phone">Phone number</label><input id="phone" name="phone" type="tel" autocomplete="tel" required></div>
+      <div class="field full"><label for="email">Email</label><input id="email" name="email" type="email" autocomplete="email" required></div>
+      <div class="field full"><label for="service-btn">Service</label>
+        <div class="select" id="service-select">
+          <input type="hidden" name="service" value="Window cleaning">
+          <button type="button" class="select-trigger" id="service-btn" aria-haspopup="listbox" aria-expanded="false" aria-controls="service-list">
+            <span class="select-value">Window cleaning</span>
+            <svg class="chev" viewBox="0 0 24 24" aria-hidden="true"><path d="M6 9.5l6 6 6-6" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg>
+          </button>
+          <ul class="select-menu" id="service-list" role="listbox" aria-labelledby="service-btn" tabindex="-1">
+            <li role="option" id="svc-0" aria-selected="true">Window cleaning</li>
+            <li role="option" id="svc-1" aria-selected="false">Conservatory cleaning</li>
+            <li role="option" id="svc-2" aria-selected="false">Gutter cleaning</li>
+            <li role="option" id="svc-3" aria-selected="false">Fascias, soffits &amp; cladding</li>
+            <li role="option" id="svc-4" aria-selected="false">Solar panel cleaning</li>
+            <li role="option" id="svc-5" aria-selected="false">Pressure washing</li>
+            <li role="option" id="svc-6" aria-selected="false">Full exterior valet</li>
+          </ul>
+        </div></div>
+      <div class="field full"><label for="msg">Message</label><textarea id="msg" name="msg" placeholder="Tell us about your property and how often you'd like us to visit"></textarea></div>
+      <button class="btn btn-primary" type="submit">Send message <svg><use href="#arrow"/></svg></button>
+      <p class="thanks" id="thanks" role="status">Thank you! Your email app should open with your message ready to send.</p>
+    </form>
+  </div>
+</section>
+</main>
+
+<footer class="site">
+  <div class="wrap">
+    <div class="foot">
+      <span class="logo-chip"><img src="assets/logo.png" alt="Aqua Clean Services" height="46"></span>
+      <ul>
+        <li><a href="#services">Services</a></li><li><a href="#results">Results</a></li><li><a href="#approach">Approach</a></li><li><a href="#reviews">Reviews</a></li><li><a href="#contact">Contact</a></li>
+        <li><a href="https://www.facebook.com/aquacleanmk1/" rel="noopener" target="_blank">Facebook</a></li>
+        <li><a href="https://twitter.com/aquacleanmk" rel="noopener" target="_blank">Twitter</a></li>
+      </ul>
+    </div>
+    <div class="legal"><span>© <span id="yr">2026</span> Aqua Clean Services. All rights reserved.</span><span>Photography: client work and Unsplash.</span></div>
+  </div>
+</footer>
+
+<div class="callbar"><span>Free quote today</span><a class="go" href="tel:07863146040">Call now</a></div>
+
+<script>
+const header=document.getElementById('top');
+const onScroll=()=>header.classList.toggle('scrolled',scrollY>20);
+addEventListener('scroll',onScroll,{passive:true});onScroll();
+
+const burger=document.querySelector('.burger'),nav=document.getElementById('nav');
+const setNav=o=>{nav.classList.toggle('open',o);burger.setAttribute('aria-expanded',o)};
+burger.addEventListener('click',()=>setNav(!nav.classList.contains('open')));
+nav.addEventListener('click',e=>{if(e.target.closest('a'))setNav(false)});
+addEventListener('keydown',e=>{if(e.key==='Escape')setNav(false)});
+
+const io=new IntersectionObserver(es=>es.forEach(e=>{if(e.isIntersecting){e.target.classList.add('in');io.unobserve(e.target)}}),{threshold:.12,rootMargin:'0px 0px -40px 0px'});
+document.querySelectorAll('.reveal').forEach(el=>io.observe(el));
+
+document.getElementById('yr').textContent=new Date().getFullYear();
+
+(()=>{
+  const root=document.getElementById('service-select'),btn=root.querySelector('.select-trigger'),
+        menu=root.querySelector('.select-menu'),opts=[...menu.children],
+        val=root.querySelector('input'),label=root.querySelector('.select-value');
+  let sel=0,act=0,typed='',typedT;
+  const setActive=i=>{act=(i+opts.length)%opts.length;opts.forEach((o,k)=>o.classList.toggle('active',k===act));
+    btn.setAttribute('aria-activedescendant',opts[act].id);opts[act].scrollIntoView({block:'nearest'})};
+  const open=()=>{root.classList.add('open');document.body.classList.add('select-open');btn.setAttribute('aria-expanded','true');setActive(sel);
+    const need=menu.getBoundingClientRect().bottom+16-innerHeight;
+    if(need>0)scrollBy({top:need,behavior:'smooth'})};
+  const close=()=>{root.classList.remove('open');document.body.classList.remove('select-open');btn.setAttribute('aria-expanded','false');btn.removeAttribute('aria-activedescendant')};
+  const choose=i=>{sel=i;opts.forEach((o,k)=>o.setAttribute('aria-selected',k===i));
+    val.value=label.textContent=opts[i].textContent;close()};
+  btn.addEventListener('click',()=>root.classList.contains('open')?close():open());
+  menu.addEventListener('mousedown',e=>e.preventDefault());
+  menu.addEventListener('click',e=>{const o=e.target.closest('[role=option]');if(o){choose(opts.indexOf(o));btn.focus()}});
+  menu.addEventListener('mousemove',e=>{const o=e.target.closest('[role=option]');if(o&&opts.indexOf(o)!==act)setActive(opts.indexOf(o))});
+  btn.addEventListener('keydown',e=>{
+    const isOpen=root.classList.contains('open');
+    if(e.key==='ArrowDown'||e.key==='ArrowUp'){e.preventDefault();isOpen?setActive(act+(e.key==='ArrowDown'?1:-1)):open()}
+    else if(e.key==='Home'&&isOpen){e.preventDefault();setActive(0)}
+    else if(e.key==='End'&&isOpen){e.preventDefault();setActive(opts.length-1)}
+    else if(e.key==='Enter'||e.key===' '){e.preventDefault();isOpen?choose(act):open()}
+    else if(e.key==='Escape'&&isOpen){e.preventDefault();close()}
+    else if(e.key==='Tab'&&isOpen){close()}
+    else if(e.key.length===1&&/\S/.test(e.key)){
+      typed+=e.key.toLowerCase();clearTimeout(typedT);typedT=setTimeout(()=>typed='',600);
+      const i=opts.findIndex(o=>o.textContent.toLowerCase().startsWith(typed));
+      if(i>-1){isOpen?setActive(i):choose(i)}
+    }
+  });
+  addEventListener('click',e=>{if(!root.contains(e.target))close()});
+  btn.addEventListener('blur',()=>setTimeout(()=>{if(!root.contains(document.activeElement))close()},0));
+})();
+
+document.getElementById('quote').addEventListener('submit',e=>{
+  e.preventDefault();
+  const f=e.target;
+  if(!f.name.value.trim()||!f.phone.value.trim()||!f.email.validity.valid||!f.email.value){
+    (f.name.value.trim()?(f.phone.value.trim()?f.email:f.phone):f.name).focus();return;
+  }
+  const body=`Name: ${f.name.value}\nPhone: ${f.phone.value}\nEmail: ${f.email.value}\nService: ${f.service.value}\n\n${f.msg.value}`;
+  location.href=`mailto:info@aquaclean-mk.co.uk?subject=${encodeURIComponent('Quote request: '+f.service.value)}&body=${encodeURIComponent(body)}`;
+  document.getElementById('thanks').classList.add('show');
+});
+</script>
+</body>
+</html>
