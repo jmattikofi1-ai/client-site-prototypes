@@ -2,11 +2,15 @@
 <html lang="en-GB">
 <head>
 <meta charset="utf-8">
-<meta name="robots" content="noindex,nofollow">
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <title>Aqua Clean Services | Window &amp; Exterior Cleaning in Milton Keynes</title>
 <meta name="description" content="Premium window, gutter, conservatory, fascia, cladding, solar panel and pressure washing services across Milton Keynes. Fully insured and guaranteed.">
+<meta name="robots" content="noindex, nofollow">
 <meta name="theme-color" content="#06243a">
+<meta property="og:title" content="Aqua Clean Services | Window &amp; Exterior Cleaning in Milton Keynes">
+<meta property="og:description" content="Window, gutter, conservatory, cladding, solar panel and pressure washing across Milton Keynes. Fully insured and guaranteed.">
+<meta property="og:type" content="website">
+<link rel="icon" href="assets/favicon.svg" type="image/svg+xml">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,400;9..144,500;9..144,600&family=Inter:wght@400;500;600&display=swap" rel="stylesheet">
@@ -17,10 +21,17 @@
   --serif:"Fraunces",Georgia,serif; --sans:"Inter",system-ui,-apple-system,"Segoe UI",sans-serif;
   --r:22px; --shadow:0 24px 60px -28px rgba(6,36,58,.45);
   --ease:cubic-bezier(.22,.8,.24,1);
+  --demo-h:42px; /* height of the demo strip; set to 0px and delete the demo markup for a live site */
 }
 *{box-sizing:border-box;margin:0;padding:0}
-html{scroll-behavior:smooth;scroll-padding-top:84px}
-body{font-family:var(--sans);color:var(--ink);background:#fff;line-height:1.65;-webkit-font-smoothing:antialiased;overflow-x:hidden}
+html{scroll-behavior:smooth;scroll-padding-top:calc(84px + var(--demo-h))}
+body{font-family:var(--sans);color:var(--ink);background:#fff;line-height:1.65;-webkit-font-smoothing:antialiased;overflow-x:hidden;padding-top:var(--demo-h)}
+
+/* Demo labelling: strip, tiled watermark (never blocks taps) and footer credit */
+.demo-strip{position:fixed;top:0;left:0;right:0;height:var(--demo-h);z-index:90;display:flex;align-items:center;justify-content:center;gap:10px;padding:0 14px;background:#0d6fa9;color:#fff;font-size:clamp(.66rem,3.1vw,.84rem);font-weight:600;letter-spacing:.09em;text-transform:uppercase;white-space:nowrap;box-shadow:0 6px 18px -8px rgba(6,36,58,.6)}
+.demo-strip b{background:#fff;color:#0a5d90;font-weight:800;letter-spacing:.1em;padding:5px 12px;border-radius:999px}
+body::after{content:"";position:fixed;inset:0;z-index:150;pointer-events:none;background-image:url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='320' height='200'%3E%3Ctext x='160' y='105' text-anchor='middle' transform='rotate(-22 160 100)' font-family='Georgia,serif' font-style='italic' font-size='24' fill='%231182c4' fill-opacity='0.16' stroke='%23ffffff' stroke-opacity='0.3' stroke-width='0.7'%3EMade by Joseph%3C/text%3E%3C/svg%3E")}
+.made{display:inline-block;margin-top:20px;padding:9px 18px;border:1.5px solid var(--aqua);border-radius:999px;color:var(--aqua);font-size:.95rem;font-weight:700;letter-spacing:.05em}
 img{display:block;max-width:100%}
 a{color:inherit;text-decoration:none}
 .wrap{width:min(1200px,100% - 48px);margin-inline:auto}
@@ -48,9 +59,11 @@ em{font-style:italic;color:var(--blue)}
 .btn-light:hover{background:var(--aqua-soft);transform:translateY(-2px)}
 
 /* Header */
-header{position:fixed;inset:0 0 auto 0;z-index:50;transition:background .35s,box-shadow .35s,padding .35s}
+header{position:fixed;inset:var(--demo-h) 0 auto 0;z-index:50}
+/* The blur sits on a pseudo-element: backdrop-filter on the header itself would trap the fixed mobile menu inside the bar */
+header::before{content:"";position:absolute;inset:0;z-index:-1;background:rgba(255,255,255,.86);backdrop-filter:blur(16px) saturate(1.4);-webkit-backdrop-filter:blur(16px) saturate(1.4);box-shadow:0 1px 0 var(--line);opacity:0;transition:opacity .35s}
+header.scrolled::before{opacity:1}
 header .bar{display:flex;align-items:center;justify-content:space-between;height:84px;transition:height .35s}
-header.scrolled{background:rgba(255,255,255,.86);backdrop-filter:blur(16px) saturate(1.4);-webkit-backdrop-filter:blur(16px) saturate(1.4);box-shadow:0 1px 0 var(--line)}
 header.scrolled .bar{height:70px}
 .brand img{height:60px;width:auto;transition:height .35s}
 header.scrolled .brand img{height:50px}
@@ -301,6 +314,8 @@ body.select-open .callbar{opacity:0;pointer-events:none;transform:translateY(20p
 </head>
 <body>
 <a class="skip" href="#main">Skip to content</a>
+
+<div class="demo-strip" role="note"><b>Demo by Joseph</b> <span>design preview</span></div>
 
 <svg width="0" height="0" style="position:absolute" aria-hidden="true">
   <defs>
@@ -566,6 +581,7 @@ body.select-open .callbar{opacity:0;pointer-events:none;transform:translateY(20p
       </ul>
     </div>
     <div class="legal"><span>© <span id="yr">2026</span> Aqua Clean Services. All rights reserved.</span><span>Photography: client work and Unsplash.</span></div>
+    <p class="made">Demo by Joseph &middot; Made by Joseph</p>
   </div>
 </footer>
 
